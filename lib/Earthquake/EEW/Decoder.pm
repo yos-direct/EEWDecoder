@@ -710,10 +710,10 @@ sub read_data {
             $data->{'warn_time'}    = $4;
             $data->{'command_code'} = $5;
         }
-        elsif ( $line =~ /^(\d{12})/ ) {
+		elsif ( $line =~ /^(\d{12})/ ) {
             $data->{'eq_time'} = $1;
         }
-        elsif ( $line =~ /ND(\d{14}) ([A-Z]+)(\d+)/ ) {
+		elsif ( $line =~ /ND(\d{14}) ([A-Z]+)(\d+)/ ) {
             $data->{'eq_id'}     = $1;
             $data->{'warn_type'} = $warn_type{$2};
             $data->{'warn_code'} = $2;
@@ -751,7 +751,7 @@ sub read_data {
             $data->{'EBI'}->{$EBIs[0]}->{'isWarnded'}  = $ebiy1{substr($EBIs[4],0,1)};  
             $data->{'EBI'}->{$EBIs[0]}->{'isWarnded_code'}  = substr($EBIs[4],0,1);  
             $data->{'EBI'}->{$EBIs[0]}->{'arrive'}  = $ebiy2{substr($EBIs[4],1,1)};
-            $data->{'EBI'}->{$EBIs[0]}->{'arrive_code'}  = substr($EBIs[4],1,1);
+			$data->{'EBI'}->{$EBIs[0]}->{'arrive_code'}  = substr($EBIs[4],1,1);
             if(defined $EBIs[5]){
 				$data->{'EBI'}->{$EBIs[5]}->{'name'}    = $area_code{$EBIs[5]};
 				$data->{'EBI'}->{$EBIs[5]}->{'shindo1'} = $shindo{$EBIs[6]};
@@ -776,7 +776,7 @@ sub read_data {
 				$data->{'EBI'}->{$EBIs[10]}->{'arrive'}  = $ebiy2{substr($EBIs[14],1,1)}; 
 				$data->{'EBI'}->{$EBIs[10]}->{'arrive_code'}  =  substr($EBIs[14],1,1)
 			}
-        }
+		}
 	}
-    return $data;
+	return $data;
 }
