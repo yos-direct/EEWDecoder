@@ -1,10 +1,19 @@
-= Earthquake-EEW-Decoder
-
+# Earthquake-EEW-Decoder
 高度利用者向け緊急地震速報コード電文フォーマットを扱う為のライブラリです。
 このプログラムは @skubota 氏の Earthquake EEW_Decoder0.03 を元に作られました。
 オリジナルのソースは http://search.cpan.org/~skubota/Earthquake_EEW_Decoder-0.03/ にあります。
 
-#!/opt/local/bin/perl -w
+###インストール
+ perl Makefile.PL
+ make
+ make test
+ make install
+
+でインストールできます。
+
+###動作確認
+
+\#!/opt/local/bin/perl -w
 
 use utf8;
 use strict;
@@ -38,27 +47,18 @@ EBI 222 S5+5- ////// 11 220 S5+5- ////// 11 211 S5+5- ////// 11
 203 S0403 144752 00 350 S0403 144753 00
 9999=
 EoF
-
+<<
 my $d = $eew->read_data($data);
 print Dumper $d;
 
-== インストール
-
- perl Makefile.PL
- make
- make test
- make install
-
-でインストールできます。
-
-== License
-
+##ライセンス
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
 by the Free Software Foundation; or the Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
 
-== Copyright
-
-Copyright (C) 2010-2011 Magistol
+##Copyright
+Magistol
+http://twitter.com/magistol
+magistol@gmail.com

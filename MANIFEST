@@ -1,7 +1,7 @@
 Changes
 Makefile.PL
 MANIFEST
-README.rdoc
+README.me
 t/EEWDATA.t
 lib/Earthquake/EEW/Decoder.pm
 sample/EEWDecoderDump.pl
